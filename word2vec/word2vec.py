@@ -1,0 +1,18 @@
+from gensim.models.word2vec import Word2VecKeyedVectors
+import jieba
+import numpy as np
+
+
+class Word2Vec:
+    def __init__(self):
+        self.model = Word2VecKeyedVectors.load_word2vec_format('word2vec/word_embedding.txt', binary=False)
+
+    def encode(self, sentence):
+        segment = list(jieba.cut(sentence))
+        embedding = np.zeros(shape=(200,))
+        for s in segment:
+            try:
+                embedding += self.model[s]
+            except:
+                embedding += np.array([1e-8] * 200)
+        return embedding
