@@ -130,4 +130,4 @@ dmypy.json
 
 
 .idea
-word2vec/word_embedding.txt
+word_embedding.txt
