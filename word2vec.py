@@ -4,9 +4,9 @@ import numpy as np
 from tqdm import tqdm
 
 
-class Word2Vec:
-    def __init__(self):
-        self.model = Word2VecKeyedVectors.load_word2vec_format('word2vec/word_embedding.txt', binary=False)
+class SentenceEmbedding:
+    def __init__(self, path):
+        self.model = Word2VecKeyedVectors.load_word2vec_format(path, binary=False)
 
     def encode(self, sentences):
         embeddings = []
