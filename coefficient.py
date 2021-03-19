@@ -17,7 +17,7 @@ def cal_cosine(a, b):
     return np.sum(np.multiply(a, b), axis=1) / np.linalg.norm(a, axis=1) / np.linalg.norm(b, axis=1)
 
 
-def cal_pearson():
+def cal_coefficient():
     df = pd.read_csv('data/LCQMC.csv')[0:10]
     label = df['label'].values
 
@@ -44,4 +44,4 @@ def cal_pearson():
 
 
 if __name__ == '__main__':
-    cal_pearson()
+    cal_coefficient()
